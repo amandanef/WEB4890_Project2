@@ -1,0 +1,183 @@
+// Your styles go here
+@charset "utf-8";
+
+// $primary: #017260;
+.color-primary {
+  color: #017260;
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+
+.game-icon {
+  float: left;
+  margin-right: 30px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+.container {
+  max-width: 90%;
+  margin: 10px auto;
+  display: flex;
+  flex-flow: column nowrap;
+  .pull-content-right {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  h1,
+  h2 {
+    font-family: "Audiowide", cursive;
+  }
+
+  .welcome-title {
+    text-align: center;
+    margin-bottom: auto;
+  }
+  .gallery-button {
+    width: 50%;
+    margin: 20px auto;
+  }
+
+  nav {
+    display: flex;
+    background: #017260;
+    color: white;
+
+    ul {
+      display: flex;
+      list-style: none;
+      padding: 5px;
+
+      & > li {
+        margin: 0px;
+        padding: 0px 10px;
+        a {
+          text-decoration: none;
+          color: white;
+          font-weight: bolder;
+        }
+      }
+
+      &:first-child {
+        flex: 1;
+      }
+    }
+  }
+
+  main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    & > .card {
+      width: 30%;
+      border: 1px solid #eee;
+      padding: 10px;
+      margin: 10px;
+
+      img {
+        width: 100%;
+        margin: auto;
+      }
+
+      .extra {
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
+        padding: 10px 0px;
+        justify-content: center;
+        align-items: center;
+
+        & > li:not(:first-child) {
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+form {
+  width: 90%;
+  .field {
+    display: flex;
+
+    & label {
+      width: 15%;
+      padding: 5px;
+      font-weight: bold;
+    }
+
+    & .control {
+      width: 85%;
+
+      input,
+      textarea {
+        padding: 10px;
+        border: 1px solid #eee;
+        border-radius: 3px;
+        width: 60%;
+      }
+      .value-form {
+        width: 75px;
+      }
+
+      p {
+        margin: 5px 0;
+        font-size: 10px;
+        color: red;
+      }
+      .starRatio {
+        color: #065064;
+        font-size: 15px;
+      }
+    }
+  }
+}
+button.primary {
+  margin: 10px;
+  padding: 10px 20px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background: #017260;
+  color: white;
+}
+
+.game-buttons {
+  width: 80%;
+  border: none;
+  margin: auto;
+  text-align: center;
+}
+.button-container {
+  text-align: center;
+  margin: auto;
+}
+.image-container {
+  margin: auto;
+  width: 70%;
+}
+
+footer {
+  background: #017260;
+  color: white;
+  padding: 20px 0 50px 20px;
+}

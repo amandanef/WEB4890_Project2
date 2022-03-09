@@ -13,7 +13,7 @@ const htmlPlugins = glob.sync('./src/**/*.html').map(file => {
 
 module.exports = {
   entry: {
-    main: './src/javascripts/front-end/main.js'
+    main: './src/javascripts/main.js'
   },
   mode: 'development',
   devtool: 'source-map',
