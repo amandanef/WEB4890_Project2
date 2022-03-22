@@ -5,6 +5,9 @@ import { ErrorNotFound } from "./Pages";
 import GameForm from "./GameForm";
 import { videogames } from "../videogames";
 import { Home } from "./Home";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+toast.configure();
 
 let sorting = false;
 
@@ -12,7 +15,6 @@ export const GameContext = createContext();
 export default function GameList() {
   const [games, setGames] = useState(videogames);
   const history = useHistory();
-
   if (!games) return <p>Loading...</p>;
 
   return (
@@ -27,21 +29,56 @@ export default function GameList() {
           </li>
         </ul>
         <Route exact path="/games">
-          <button
-            className="primary"
-            onClick={() => {
-              if (sorting === false) {
-                games.sort((a, b) => a.rating - b.rating);
-                sorting = true;
-              } else if (sorting === true) {
-                games.sort((a, b) => b.rating - a.rating);
-                sorting = false;
-              }
-              setGames(games.map((m) => m));
-            }}
-          >
-            Sort
-          </button>
+          <div className="dropdown">
+            <button className="dropbtn primary">Sort by...</button>
+            <div className="dropdown-content">
+              <a
+                onClick={() => {
+                  if (sorting === false) {
+                    games.sort((a, b) => a.title.localeCompare(b.title));
+                    sorting = true;
+                  } else if (sorting === true) {
+                    games.sort((a, b) => b.title.localeCompare(a.title));
+                    sorting = false;
+                  }
+                  setGames(games.map((m) => m));
+                  toast("Successfully sorted by title!");
+                }}
+              >
+                Title
+              </a>
+              <a
+                onClick={() => {
+                  if (sorting === false) {
+                    games.sort((a, b) => a.rating - b.rating);
+                    sorting = true;
+                  } else if (sorting === true) {
+                    games.sort((a, b) => b.rating - a.rating);
+                    sorting = false;
+                  }
+                  setGames(games.map((m) => m));
+                  toast("Successfully sorted by rating!");
+                }}
+              >
+                Rating
+              </a>
+              <a
+                onClick={() => {
+                  if (sorting === false) {
+                    games.sort((a, b) => a.year - b.year);
+                    sorting = true;
+                  } else if (sorting === true) {
+                    games.sort((a, b) => b.year - a.year);
+                    sorting = false;
+                  }
+                  setGames(games.map((m) => m));
+                  toast("Successfully sorted by year!");
+                }}
+              >
+                Release Year
+              </a>
+            </div>
+          </div>
         </Route>
         <button
           className="primary"
