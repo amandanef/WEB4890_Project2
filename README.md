@@ -1,5 +1,5 @@
 # WEB4890 Project 2
-A back-end project demonstrating the use of Node.js and React. 
+A coding project demonstrating the use of Node.js and React. Demonstrates the use of form input and output with the use of arrays and user-friendly design.
 
 ## Instructions
 After you clone this repository from GitHub and have downloaded Node.js from www.nodejs.org, run the following command to install the required NPM packages. You only need to do this once.
